@@ -1,8 +1,13 @@
 import styled from 'styled-components';
 import { cores } from '../styles';
+
 export const Header = styled.header`
-  background-image: linear-gradient(45deg, ${cores.corPrincipal}, ${cores.corSecundaria});
-  margin: 80px 0;
+  background-image: linear-gradient(
+    45deg,
+    ${cores.corPrincipal},
+    ${cores.corSecundaria}
+  );
+  margin-bottom: 2rem;
   padding: 16px 24px;
   display: flex;
   border-radius: 6px;

@@ -1,7 +1,42 @@
 {
-  "semi": true,
+  "arrowParens": "avoid",
   "singleQuote": true,
-  "trailingComma": "all",
-  "printWidth": 100,
-  "endOfLine": "lf"
+  "plugins": [
+    "@prettier/plugin-pug",
+    "prettier-plugin-pkg",
+    "prettier-plugin-svelte",
+    "prettier-plugin-tailwindcss",
+    "prettier-plugin-organize-imports",
+    "prettier-plugin-sort-json",
+    "prettier-plugin-sh",
+    "prettier-plugin-jsdoc",
+    "prettier-plugin-astro",
+    "prettier-plugin-solidity",
+    "prettier-plugin-toml",
+    "prettier-plugin-yaml",
+    "prettier-plugin-apex",
+    "prettier-plugin-xml",
+    "prettier-plugin-sql",
+    "prettier-plugin-markdown",
+    "prettier-plugin-packagejson",
+    "prettier-plugin-sort-imports",
+    "prettier-plugin-sort-attributes",
+    "prettier-plugin-sort-html-attributes",
+    "prettier-plugin-css-order"
+  ],
+  "overrides": [
+    {
+      "files": [".*rc"],
+      "excludeFiles": [".nvmrc"],
+      "options": {
+        "parser": "json"
+      }
+    },
+    {
+      "files": [".changeset/**/*", "CHANGELOG.md"],
+      "options": {
+        "singleQuote": false
+      }
+    }
+  ]
 }
