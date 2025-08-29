@@ -1,14 +1,17 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { Produto } from '../App'
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { Produto } from '../App';
 
-const api = createApi ({
-  baseQuery: fetchBaseQuery({ baseUrl: 'https://ebac-fake-api.vercel.app/api/ebac_sports' }),
+const api = createApi({
+  reducerPath: 'api',
+  baseQuery: fetchBaseQuery({
+    baseUrl: 'https://ebac-fake-api.vercel.app/api'
+  }),
   endpoints: (builder) => ({
     getProdutos: builder.query<Produto[], void>({
-      query: () => '/Produtos',
-    })
-  })
-})
+      query: () => '/ebac_sports',
+    }),
+  }),
+});
 
-export const { useGetProdutosQuery } = api
-export default api
+export const { useGetProdutosQuery } = api;
+export default api;

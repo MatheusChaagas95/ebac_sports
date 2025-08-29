@@ -1,12 +1,16 @@
 import { useSelector } from 'react-redux';
 import { Produto as ProdutoType } from '../App';
 import Produto from '../components/Produto';
+import { useGetProdutosQuery } from '../services/api';
 import { RootState } from '../store';
 import * as S from './styles';
 
 const Produtos = () => {
-  const produtos = useSelector((state: RootState) => state.cart.itens);
+  const { data: produtos = [], isLoading, error } = useGetProdutosQuery();
   const favoritos = useSelector((state: RootState) => state.cart.favoritos);
+
+  if (isLoading) return <div>Carregando produtos...</div>;
+  if (error) return <div>Erro ao carregar produtos</div>;
 
   return (
     <S.Produtos>
