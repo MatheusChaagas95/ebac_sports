@@ -96,19 +96,3 @@ export const BtnFavorito = styled.button.attrs({
   }
 `
 
-export const GridProdutos = styled.div`
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-  justify-items: center;
-  padding: 1rem;
-
-  @media (min-width: 1024px) {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-`
